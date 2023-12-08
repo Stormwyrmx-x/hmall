@@ -18,7 +18,7 @@ import java.util.List;
 @Api(tags = "购物车相关接口")
 @RestController
 @RequestMapping("/carts")
-@RequiredArgsConstructor//只给那些必须初始化的参数的构造函数
+@RequiredArgsConstructor//只给那些必须初始化的参数生成构造函数，例如：final修饰的参数
 public class CartController
 {
     private final CartService cartService;//要么用@Autowired，要么声明构造函数

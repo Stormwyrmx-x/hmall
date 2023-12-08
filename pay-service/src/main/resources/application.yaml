@@ -13,7 +13,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.203.129
+        server-addr: 10.13.0.128
 feign:
   okhttp:
     enabled: true

@@ -3,8 +3,8 @@ package com.hmall.item.controller;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.hmall.api.dto.ItemDTO;
 import com.hmall.common.domain.PageDTO;
-import com.hmall.item.model.dto.ItemDTO;
 import com.hmall.item.model.entity.Item;
 import com.hmall.item.model.query.ItemPageQuery;
 import com.hmall.item.service.ItemService;

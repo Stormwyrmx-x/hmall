@@ -4,6 +4,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+/**
+ * 其它模块引入api，所以在其它模块中，不需要定义ItemDTO，不然会发生导包冲突
+ */
 @Data
 @ApiModel(description = "商品实体")
 public class ItemDTO

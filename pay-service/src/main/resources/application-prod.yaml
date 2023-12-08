@@ -1,0 +1,6 @@
+hm:
+  db:
+    host: mysql
+    pw: wengyehao123
+
+

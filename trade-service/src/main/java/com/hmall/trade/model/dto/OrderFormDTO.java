@@ -1,5 +1,6 @@
 package com.hmall.trade.model.dto;
 
+import com.hmall.api.dto.OrderDetailDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

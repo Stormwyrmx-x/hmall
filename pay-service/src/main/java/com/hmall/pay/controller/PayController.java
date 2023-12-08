@@ -1,15 +1,19 @@
 package com.hmall.pay.controller;
 
 import com.hmall.common.exception.BizIllegalException;
+import com.hmall.common.utils.BeanUtils;
 import com.hmall.pay.enums.PayType;
 import com.hmall.pay.model.dto.PayApplyDTO;
 import com.hmall.pay.model.dto.PayOrderFormDTO;
+import com.hmall.pay.model.vo.PayOrderVO;
 import com.hmall.pay.service.PayOrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Api(tags = "支付相关接口")
 @RestController
@@ -36,5 +40,11 @@ public class PayController
     public void tryPayOrderByBalance(@PathVariable("id") Long id, @RequestBody PayOrderFormDTO payOrderFormDTO){
         payOrderFormDTO.setId(id);
         payOrderService.tryPayOrderByBalance(payOrderFormDTO);
+    }
+
+    @ApiOperation("查询支付单")
+    @GetMapping
+    public List<PayOrderVO> queryPayOrders(){
+        return BeanUtils.copyList(payOrderService.list(), PayOrderVO.class);
     }
 }

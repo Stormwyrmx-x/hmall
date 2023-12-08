@@ -89,6 +89,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements Ca
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
         // 2.查询商品
         List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
+        //👆Ribbon会从Nacos获取item-service的所有实例，并根据配置的策略（如轮询、随机等）来选择一个实例进行调用，从而实现负载均衡。
 //        List<ItemDTO> items = itemService.queryItemByIds(itemIds);
 
         if (CollUtils.isEmpty(items)) {
