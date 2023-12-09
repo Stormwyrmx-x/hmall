@@ -32,6 +32,19 @@ spring:
           predicates:
             - Path=/users/**,/addresses/**
 
+hm:
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /hi
+
 
 #      default-filters:
 #        - AddRequestHeader=name, husiqi
