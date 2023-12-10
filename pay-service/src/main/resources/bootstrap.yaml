@@ -1,0 +1,17 @@
+# bootstrap.yaml 文件是 Spring Cloud 应用程序的引导配置文件。它在应用程序启动时加载，通常用于定义一些全局配置，如服务发现、配置中心等。
+spring:
+  application:
+    name: pay-service
+#  profiles:
+#    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.13.0.128
+      config:
+        file-extension: yaml
+        shared-configs:
+          - data-id: shared-jdbc.yaml
+          - data-id: shared-log.yaml
+          - data-id: shared-swagger.yaml
+        server-addr: 10.13.0.128

@@ -1,4 +1,7 @@
 hm:
   db:
     host: 10.13.0.128 # 修改为你自己的虚拟机IP地址
-    pw: wengyehao123 # 修改为docker中的MySQL密码
+    port: 3306
+    username: root
+    database: hm-pay
+    password: wengyehao123 # 修改为docker中的MySQL密码

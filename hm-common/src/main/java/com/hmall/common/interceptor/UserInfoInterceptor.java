@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Component
 @ConditionalOnClass(DispatcherServlet.class)
+//DispatcherServlet是SpringMVC的核心组件，当DispatcherServlet在类路径下时，才会装载这个bean
 public class UserInfoInterceptor implements HandlerInterceptor
 {
     @Override

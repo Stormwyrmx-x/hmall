@@ -1,0 +1,83 @@
+17:43:55:090  INFO 11360 --- [main] com.hmall.trade.TradeApplication         : The following 1 profile is active: "dev"
+17:43:55:876  INFO 11360 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e38a1652-b67e-39b1-a0db-2d21f1da6a9b
+17:43:56:141  INFO 11360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+17:43:56:149  INFO 11360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:43:56:149  INFO 11360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:43:56:262  INFO 11360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:43:56:273  INFO 11360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1165 ms
+17:43:56:433  INFO 11360 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'item-service' URL not provided. Will try picking an instance via load-balancing.
+17:43:57:493  INFO 11360 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'cart-service' URL not provided. Will try picking an instance via load-balancing.
+17:43:58:169  INFO 11360 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:43:58:587  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 8c3455b9-44e5-4519-8acd-20c2bd2ce837
+17:43:58:587  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] RpcClient init label, labels = {module=naming, source=sdk}
+17:43:58:588  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:43:58:588  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:43:58:589  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:43:58:589  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Try to connect to server on start up, server: {serverIp = '10.13.0.128', server main port = 8848}
+17:43:58:715  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Success to connect to server [10.13.0.128:8848] on start up, connectionId = 1702201437386_10.31.191.90_4258
+17:43:58:715  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:43:58:716  INFO 11360 --- [main] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$473/0x000000080041b040
+17:43:58:716  INFO 11360 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Notify connected event to listeners.
+17:43:58:757  INFO 11360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+17:43:58:766  INFO 11360 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP trade-service 10.31.191.90:8085 register finished
+17:43:59:039  INFO 11360 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:43:59:042  INFO 11360 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:43:59:060  INFO 11360 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:43:59:129  INFO 11360 --- [main] com.hmall.trade.TradeApplication         : Started TradeApplication in 7.013 seconds (JVM running for 7.758)
+17:43:59:134  INFO 11360 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=trade-service, group=DEFAULT_GROUP
+17:43:59:134  INFO 11360 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=trade-service.yaml, group=DEFAULT_GROUP
+17:43:59:134  INFO 11360 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=trade-service-dev.yaml, group=DEFAULT_GROUP
+17:43:59:291  INFO 11360 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Receive server push request, request = NotifySubscriberRequest, requestId = 139
+17:43:59:294  INFO 11360 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Ack server push request, request = NotifySubscriberRequest, requestId = 139
+17:46:09:176  INFO 11360 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:46:09:176  INFO 11360 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+17:46:09:177  INFO 11360 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+17:47:12:503  INFO 11360 --- [http-nio-8085-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+17:47:12:705  INFO 11360 --- [http-nio-8085-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+17:47:12:733 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] ---> GET http://item-service/items?ids=40305713537&ids=2030774 HTTP/1.1
+17:47:12:734 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] user-info: 1
+17:47:12:734 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] ---> END HTTP (0-byte body)
+17:47:12:881 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] <--- HTTP/1.1 200  (146ms)
+17:47:12:881 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] connection: keep-alive
+17:47:12:881 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] content-type: application/json
+17:47:12:881 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] date: Sun, 10 Dec 2023 09:47:12 GMT
+17:47:12:881 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] keep-alive: timeout=60
+17:47:12:881 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] transfer-encoding: chunked
+17:47:12:882 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] 
+17:47:12:882 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] [{"id":"2030774","name":"外交官（Diplomat）磨砂箱子拉杆箱行李箱男女旅行箱密码箱万向轮箱包TC-15174TT 28英寸 黑色","price":58800,"stock":10000,"image":"https://m.360buyimg.com/mobilecms/s720x720_jfs/t22870/321/1238637240/149996/1aa457fe/5b594396Nfb108e31.jpg!q70.jpg.webp","category":"拉杆箱","brand":"Diplomat","spec":"{\"颜色\": \"黑色\", \"尺寸\": \"28英寸\"}","sold":0,"commentCount":0,"isAD":false,"status":1},{"id":"40305713537","name":"【官方正品 品牌直营】奥古狮登小白鞋女秋季透气2018新款百搭韩版休闲鞋运动鞋女鞋厚底板鞋女 浅蓝【厚底】 41","price":35400,"stock":9997,"image":"https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/14147/34/2890/275451/5c225484Ebd346404/e61513be4639ee2e.jpg!q70.jpg.webp","category":"休闲鞋","brand":"奥古狮登","spec":"{\"颜色\": \"金色\", \"尺码\": \"41\"}","sold":0,"commentCount":0,"isAD":false,"status":1}]
+17:47:12:882 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#queryItemByIds] <--- END HTTP (947-byte body)
+17:47:12:923 DEBUG 11360 --- [http-nio-8085-exec-1] c.hmall.trade.mapper.OrderMapper.insert  : ==>  Preparing: INSERT INTO `order` ( id, total_fee, payment_type, user_id, status ) VALUES ( ?, ?, ?, ?, ? )
+17:47:12:941 DEBUG 11360 --- [http-nio-8085-exec-1] c.hmall.trade.mapper.OrderMapper.insert  : ==> Parameters: 1733785428199043073(Long), 129600(Integer), 3(Integer), 1(Long), 1(Integer)
+17:47:12:947 DEBUG 11360 --- [http-nio-8085-exec-1] c.hmall.trade.mapper.OrderMapper.insert  : <==    Updates: 1
+17:47:12:957 DEBUG 11360 --- [http-nio-8085-exec-1] c.h.t.mapper.OrderDetailMapper.insert    : ==>  Preparing: INSERT INTO order_detail ( order_id, item_id, num, name, spec, price, image ) VALUES ( ?, ?, ?, ?, ?, ?, ? )
+17:47:12:958 DEBUG 11360 --- [http-nio-8085-exec-1] c.h.t.mapper.OrderDetailMapper.insert    : ==> Parameters: 1733785428199043073(Long), 2030774(Long), 1(Integer), 外交官（Diplomat）磨砂箱子拉杆箱行李箱男女旅行箱密码箱万向轮箱包TC-15174TT 28英寸 黑色(String), {"颜色": "黑色", "尺寸": "28英寸"}(String), 58800(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t22870/321/1238637240/149996/1aa457fe/5b594396Nfb108e31.jpg!q70.jpg.webp(String)
+17:47:12:959 DEBUG 11360 --- [http-nio-8085-exec-1] c.h.t.mapper.OrderDetailMapper.insert    : ==> Parameters: 1733785428199043073(Long), 40305713537(Long), 2(Integer), 【官方正品 品牌直营】奥古狮登小白鞋女秋季透气2018新款百搭韩版休闲鞋运动鞋女鞋厚底板鞋女 浅蓝【厚底】 41(String), {"颜色": "金色", "尺码": "41"}(String), 35400(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/14147/34/2890/275451/5c225484Ebd346404/e61513be4639ee2e.jpg!q70.jpg.webp(String)
+17:47:12:993 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] ---> DELETE http://cart-service/carts?ids=40305713537&ids=2030774 HTTP/1.1
+17:47:12:993 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] user-info: 1
+17:47:12:993 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] ---> END HTTP (0-byte body)
+17:47:13:030 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] <--- HTTP/1.1 200  (37ms)
+17:47:13:030 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] connection: keep-alive
+17:47:13:030 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] content-length: 0
+17:47:13:030 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] date: Sun, 10 Dec 2023 09:47:13 GMT
+17:47:13:030 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] keep-alive: timeout=60
+17:47:13:030 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.CartClient          : [CartClient#deleteCartItemByIds] <--- END HTTP (0-byte body)
+17:47:13:033 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] ---> PUT http://item-service/items/stock/deduct HTTP/1.1
+17:47:13:033 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] Content-Length: 63
+17:47:13:033 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] Content-Type: application/json
+17:47:13:033 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] user-info: 1
+17:47:13:033 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] 
+17:47:13:033 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] [{"itemId":"2030774","num":1},{"itemId":"40305713537","num":2}]
+17:47:13:033 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] ---> END HTTP (63-byte body)
+17:47:13:067 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] <--- HTTP/1.1 200  (33ms)
+17:47:13:067 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] connection: keep-alive
+17:47:13:067 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] content-length: 0
+17:47:13:067 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] date: Sun, 10 Dec 2023 09:47:13 GMT
+17:47:13:067 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] keep-alive: timeout=60
+17:47:13:067 DEBUG 11360 --- [http-nio-8085-exec-1] com.hmall.api.client.ItemClient          : [ItemClient#deductStock] <--- END HTTP (0-byte body)
+17:47:13:138 DEBUG 11360 --- [http-nio-8085-exec-6] c.h.trade.mapper.OrderMapper.selectById  : ==>  Preparing: SELECT id,total_fee,payment_type,user_id,status,create_time,pay_time,consign_time,end_time,close_time,comment_time,update_time FROM `order` WHERE id=?
+17:47:13:139 DEBUG 11360 --- [http-nio-8085-exec-6] c.h.trade.mapper.OrderMapper.selectById  : ==> Parameters: 1733785428199043073(Long)
+17:47:13:152 DEBUG 11360 --- [http-nio-8085-exec-6] c.h.trade.mapper.OrderMapper.selectById  : <==      Total: 1
+17:47:13:321  INFO 11360 --- [nacos-grpc-client-executor-48] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Receive server push request, request = NotifySubscriberRequest, requestId = 149
+17:47:13:322  INFO 11360 --- [nacos-grpc-client-executor-48] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Ack server push request, request = NotifySubscriberRequest, requestId = 149
+17:47:13:521  INFO 11360 --- [nacos-grpc-client-executor-49] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Receive server push request, request = NotifySubscriberRequest, requestId = 150
+17:47:13:521  INFO 11360 --- [nacos-grpc-client-executor-49] com.alibaba.nacos.common.remote.client   : [8c3455b9-44e5-4519-8acd-20c2bd2ce837] Ack server push request, request = NotifySubscriberRequest, requestId = 150
