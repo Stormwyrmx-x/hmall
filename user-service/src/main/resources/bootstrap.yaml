@@ -7,11 +7,11 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.13.0.128
+        server-addr: 192.168.203.132
       config:
         file-extension: yaml
         shared-configs:
           - data-id: shared-jdbc.yaml
           - data-id: shared-log.yaml
           - data-id: shared-swagger.yaml
-        server-addr: 10.13.0.128
+        server-addr: 192.168.203.132

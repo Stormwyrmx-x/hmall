@@ -6,7 +6,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.13.0.128
+        server-addr: 192.168.203.132
+#   todo 动态路由
     gateway:
       routes:
         - id: item-service
