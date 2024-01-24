@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 @ConditionalOnClass(DispatcherServlet.class)
 //DispatcherServlet是SpringMVC的核心组件，当DispatcherServlet在类路径下时，才会装载这个bean
+//要让配置在各个模块中生效，在网关里不生效
 public class WebMvcConfig implements WebMvcConfigurer
 {
     private final UserInfoInterceptor userInfoInterceptor;

@@ -5,15 +5,15 @@ spring:
     name: gateway
   cloud:
     nacos:
-      discovery:
-        server-addr: 192.168.203.132
+      server-addr: 192.168.203.132
 #   todo 动态路由
     gateway:
       routes:
-        - id: item-service
-          uri: lb://item-service
-          predicates:
-            - Path=/items/**,/search/**
+        - id: item-service # 路由的id，没有规定规则但要求唯一，建议配合服务名（spring.application.name）
+          uri: lb://item-service # 路由微服务的目标，从注册中心获取服务列表，lb表示负载均衡。
+          # 192.168.203.132:8080/items/** => 192.168.203.132:8081/items/** 或 192.168.203.132:8083/items/**
+          predicates: # 路由断言（规则），判断请求是否符合规则，如果符合机路由到uri里写的目标
+            - Path=/items/**,/search/** # 以请求路径做判断，以/items开头则符合
           filters:
             - AddRequestHeader=name, husiqi
         - id: cart-service

@@ -73,7 +73,7 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered
     @Override
     public int getOrder()
     {
-        //返回值越小，优先级越高
+        //返回值越小，优先级越高，保证在NettyRoutingFilter之前执行
         return 0;
     }
 }
