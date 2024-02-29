@@ -38,6 +38,12 @@ public class ItemController
     @ApiOperation("根据id批量查询商品")
     @GetMapping
     public List<ItemDTO> queryItemByIds(@RequestParam("ids") List<Long> ids){
+        //todo 休眠500毫秒，仅用作测试
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return itemService.queryItemByIds(ids);
     }
 
