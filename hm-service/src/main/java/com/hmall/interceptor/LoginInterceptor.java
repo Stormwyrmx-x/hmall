@@ -2,11 +2,10 @@ package com.hmall.interceptor;
 
 import com.hmall.common.utils.UserContext;
 import com.hmall.utils.JwtTool;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.servlet.HandlerInterceptor;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @RequiredArgsConstructor
 public class LoginInterceptor implements HandlerInterceptor {

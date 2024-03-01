@@ -8,9 +8,6 @@ import com.hmall.common.utils.UserContext;
 import com.hmall.user.model.dto.AddressDTO;
 import com.hmall.user.model.entity.Address;
 import com.hmall.user.service.AddressService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,15 +26,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/addresses")
 @RequiredArgsConstructor
-@Api(tags = "收货地址管理接口")
 public class AddressController
 {
 
     private final AddressService addressService;
 
-    @ApiOperation("根据id查询地址")
     @GetMapping("{addressId}")
-    public AddressDTO findAddressById(@ApiParam("地址id") @PathVariable("addressId") Long id) {
+    public AddressDTO findAddressById(@PathVariable("addressId") Long id) {
         // 1.根据id查询
         Address address = addressService.getById(id);
         // 2.判断当前用户
@@ -47,7 +42,6 @@ public class AddressController
         }
         return BeanUtils.copyBean(address, AddressDTO.class);
     }
-    @ApiOperation("查询当前用户地址列表")
     @GetMapping
     public List<AddressDTO> findMyAddresses() {
         // 1.查询列表

@@ -3,16 +3,16 @@ server:
 spring:
   profiles:
     active: dev
-  cloud:
-    sentinel:
-      transport:
-        dashboard: 192.168.203.132:8858 #sentinel的控制台地址
-      http-method-specify: true #开启Sentinel对http请求方式的支持
+#  cloud:
+#    sentinel:
+#      transport:
+#        dashboard: 192.168.203.132:8858 #sentinel的控制台地址
+#      http-method-specify: true #开启Sentinel对http请求方式的支持
 feign:
   okhttp:
     enabled: true
-  sentinel:
-    enabled: true #开启Sentinel对Feign的支持，可以在Feign调用中实现限流、熔断等功能
+#  sentinel:
+#    enabled: true #开启Sentinel对Feign的支持，可以在Feign调用中实现限流、熔断等功能
 
 
 hm:

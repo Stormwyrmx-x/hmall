@@ -3,14 +3,14 @@ package com.hmall.common.utils;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
 import java.util.Map;
 
@@ -145,7 +145,7 @@ public class WebUtils {
         return request.getRemoteAddr();
     }
 
-    public static CookieBuilder cookieBuilder(){
+    /*public static CookieBuilder cookieBuilder(){
         return new CookieBuilder(getRequest(), getResponse());
-    }
+    }*/
 }

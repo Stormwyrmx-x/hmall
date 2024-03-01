@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Collection;
 import java.util.List;
 
-@FeignClient(name = "item-service", fallbackFactory = ItemClientFallbackFactory.class)
+@FeignClient(name = "item-service"/*, fallbackFactory = ItemClientFallbackFactory.class*/)
 public interface ItemClient
 {
     @GetMapping("/items")
