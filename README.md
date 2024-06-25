@@ -2,6 +2,10 @@
 黑马商城-微服务
 
 登录用户名：jack 密码：123
+nacos用户名：nacos 密码：nacos 端口：8848
+sentinel用户名：sentinel 密码：sentinel 端口：8858
+seata用户名：admin 密码：admin 端口：7099
+rabbitmq用户名：admin 密码：admin 端口：15672
 
 
 # 服务启动流程

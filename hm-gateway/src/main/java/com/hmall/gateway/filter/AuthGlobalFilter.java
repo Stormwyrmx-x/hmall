@@ -22,42 +22,35 @@ import java.util.List;
 
 @Component //将过滤器交给spring容器管理
 @RequiredArgsConstructor
-public class AuthGlobalFilter implements GlobalFilter, Ordered
-{
+public class AuthGlobalFilter implements GlobalFilter, Ordered {
     private final AuthProperties authProperties;
     private final JwtTool jwtTool;
-    private final AntPathMatcher antPathMatcher=new AntPathMatcher();
+    private final AntPathMatcher antPathMatcher = new AntPathMatcher();
 
     @Override
-    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain)
-    {
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         //登录校验
         //1.获取请求头
         ServerHttpRequest request = exchange.getRequest();
         //2.判断请求路径是否在excludePaths中
         List<String> excludePaths = authProperties.getExcludePaths();
-        for (String excludePath : excludePaths)
-        {
-            if (antPathMatcher.match(excludePath,request.getPath().toString()))
-            {
+        for (String excludePath : excludePaths) {
+            if (antPathMatcher.match(excludePath, request.getPath().toString())) {
                 //如果在excludePaths中，则直接放行
                 return chain.filter(exchange);
             }
         }
         //3.获取token
         List<String> headers = request.getHeaders().get("authorization");
-        String token=null;
-        if (!CollectionUtils.isEmpty(headers))
-        {
-            token=headers.get(0);
+        String token = null;
+        if (!CollectionUtils.isEmpty(headers)) {
+            token = headers.get(0);
         }
         //4.校验jwt，得到userId
         Long userId;
-        try
-        {
-            userId= jwtTool.parseToken(token);
-        } catch (UnauthorizedException e)
-        {
+        try {
+            userId = jwtTool.parseToken(token);
+        } catch (UnauthorizedException e) {
             ServerHttpResponse response = exchange.getResponse();
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
             return response.setComplete();
@@ -71,8 +64,7 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered
     }
 
     @Override
-    public int getOrder()
-    {
+    public int getOrder() {
         //返回值越小，优先级越高，保证在NettyRoutingFilter之前执行
         return 0;
     }
