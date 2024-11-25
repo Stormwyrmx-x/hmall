@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.beans.Transient;
 import java.io.Serializable;
 
 /**
@@ -31,6 +32,7 @@ public class Address implements Serializable {
     /**
      * 用户ID
      */
+//    @Transient
     private Long userId;
 
     /**

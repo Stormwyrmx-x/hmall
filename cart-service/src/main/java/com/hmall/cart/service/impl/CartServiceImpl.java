@@ -88,6 +88,10 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements Ca
         return vos;
     }
 
+    /**
+     * 查询购物车时，还要查询购物车中的商品信息
+     * @param vos
+     */
     private void handleCartItems(List<CartVO> vos) {
         // 1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());

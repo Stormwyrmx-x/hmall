@@ -15,6 +15,8 @@ import com.hmall.pay.model.dto.PayOrderFormDTO;
 import com.hmall.pay.model.entity.PayOrder;
 import com.hmall.pay.service.PayOrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +38,8 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
     private final UserClient userClient;
 
     private final TradeClient tradeClient;
+
+    private final RabbitTemplate rabbitTemplate;
 
     @Override
     public String applyPayOrder(PayApplyDTO applyDTO) {
@@ -64,7 +68,12 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         }
         // 5.修改订单状态
 //        orderService.updateById(order);
-        tradeClient.markOrderPaySuccess(po.getBizOrderNo());
+//        tradeClient.markOrderPaySuccess(po.getBizOrderNo());
+        try {
+            rabbitTemplate.convertAndSend("pay.direct", "pay.success", po.getBizOrderNo());
+        } catch (AmqpException e) {
+            log.error("发送消息失败！", e);
+        }
     }
 
     public boolean markPayOrderSuccess(Long id, LocalDateTime successTime) {

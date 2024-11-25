@@ -16,6 +16,7 @@ import com.hmall.trade.service.OrderDetailService;
 import com.hmall.trade.service.OrderService;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,6 +42,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     private final ItemClient itemClient;
     private final OrderDetailService detailService;
     private final CartClient cartClient;
+    private final RabbitTemplate rabbitTemplate;
 
     @Override
     @GlobalTransactional
@@ -77,6 +79,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         // 3.清理购物车商品
         cartClient.deleteCartItemByIds(itemIds);
+        //无法正确清理购物车商品，因为没有发送userId。同时seata分布式事务无法在rabbitmq中生效
+        //rabbitTemplate.convertAndSend("trade.topic", "order.create", itemIds);
+
 
         // 4.扣减库存
         try {

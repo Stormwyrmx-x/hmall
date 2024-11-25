@@ -1,11 +1,16 @@
 # hmall
 黑马商城-微服务
 
-登录用户名：jack 密码：123
-nacos用户名：nacos 密码：nacos 端口：8848
-sentinel用户名：sentinel 密码：sentinel 端口：8858
-seata用户名：admin 密码：admin 端口：7099
-rabbitmq用户名：admin 密码：admin 端口：15672
+- 虚拟机(centos7)ip地址：192.168.203.132
+- docker创建的网络名：heima 包含的container：mysql、nacos、seata、rabbitmq
+- 登录用户名：jack 密码：123 支付密码：123
+- mysql用户名：root 密码：wengyehao123
+- nacos用户名：nacos 密码：nacos 端口：8848
+- sentinel用户名：sentinel 密码：sentinel 端口：8858
+- seata用户名：admin 密码：admin 控制台端口：7099 微服务连接端口：8099
+- rabbitmq用户名：admin 密码：admin 控制台端口：15672 消息发送处理接口：5672
+
+
 
 
 # 服务启动流程
