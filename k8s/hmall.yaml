@@ -1,0 +1,215 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart-service
+  template:
+    metadata:
+      labels:
+        app: cart-service
+    spec:
+      containers:
+        - name: cart-service
+          image: tanyuzhentyz/cart-service:latest
+          ports:
+            - containerPort: 8082
+          resources:
+            requests:
+              memory: "128Mi"  # 容器启动所需的最低内存
+              cpu: "250m"      # 容器启动所需的最低 CPU
+            limits:
+              memory: "512Mi"  # 容器最多可以使用的内存
+              cpu: "500m"      # 容器最多可以使用的 CPU
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-service
+spec:
+  selector:
+    app: cart-service
+  ports:
+    - protocol: TCP
+      port: 8082         # Service 暴露的端口
+      targetPort: 8082   # Pod 中的端口
+  type: ClusterIP          # 允许通过节点的 IP 和端口访问
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: item-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: item-service
+  template:
+    metadata:
+      labels:
+        app: item-service
+    spec:
+      containers:
+        - name: item-service
+          image: tanyuzhentyz/item-service:latest
+          ports:
+            - containerPort: 8081
+          resources:
+            requests:
+              memory: "128Mi"  # 容器启动所需的最低内存
+              cpu: "250m"      # 容器启动所需的最低 CPU
+            limits:
+              memory: "512Mi"  # 容器最多可以使用的内存
+              cpu: "500m"      # 容器最多可以使用的 CPU
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: item-service
+spec:
+  selector:
+    app: item-service
+  ports:
+    - protocol: TCP
+      port: 8081         # Service 暴露的端口
+      targetPort: 8081   # Pod 中的端口
+  type: ClusterIP          # 允许通过节点的 IP 和端口访问
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pay-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pay-service
+  template:
+    metadata:
+      labels:
+        app: pay-service
+    spec:
+      containers:
+        - name: pay-service
+          image: tanyuzhentyz/pay-service:latest
+          ports:
+            - containerPort: 8086
+          resources:
+            requests:
+              memory: "128Mi"  # 容器启动所需的最低内存
+              cpu: "250m"      # 容器启动所需的最低 CPU
+            limits:
+              memory: "512Mi"  # 容器最多可以使用的内存
+              cpu: "500m"      # 容器最多可以使用的 CPU
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pay-service
+spec:
+  selector:
+    app: pay-service
+  ports:
+    - protocol: TCP
+      port: 8086         # Service 暴露的端口
+      targetPort: 8086   # Pod 中的端口
+  type: ClusterIP          # 允许通过节点的 IP 和端口访问
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trade-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trade-service
+  template:
+    metadata:
+      labels:
+        app: trade-service
+    spec:
+      containers:
+        - name: trade-service
+          image: tanyuzhentyz/trade-service:latest
+          ports:
+            - containerPort: 8085
+          resources:
+            requests:
+              memory: "128Mi"  # 容器启动所需的最低内存
+              cpu: "250m"      # 容器启动所需的最低 CPU
+            limits:
+              memory: "512Mi"  # 容器最多可以使用的内存
+              cpu: "500m"      # 容器最多可以使用的 CPU
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: trade-service
+spec:
+  selector:
+    app: trade-service
+  ports:
+    - protocol: TCP
+      port: 8085         # Service 暴露的端口
+      targetPort: 8085   # Pod 中的端口
+  type: ClusterIP          # 允许通过节点的 IP 和端口访问
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - name: user-service
+          image: tanyuzhentyz/user-service:latest
+          ports:
+            - containerPort: 8084
+          resources:
+            requests:
+              memory: "128Mi"  # 容器启动所需的最低内存
+              cpu: "250m"      # 容器启动所需的最低 CPU
+            limits:
+              memory: "512Mi"  # 容器最多可以使用的内存
+              cpu: "500m"      # 容器最多可以使用的 CPU
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+spec:
+  selector:
+    app: user-service
+  ports:
+    - protocol: TCP
+      port: 8084         # Service 暴露的端口
+      targetPort: 8084   # Pod 中的端口
+  type: ClusterIP          # 允许通过节点的 IP 和端口访问
