@@ -1,4 +1,7 @@
 hm:
   db:
-    host: mysql
-    pw: wengyehao123
+    host: mysql-service
+    username: root
+    password: password
+  nacos:
+    server-addr: nacos-service

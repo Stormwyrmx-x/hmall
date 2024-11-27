@@ -6,7 +6,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.13.0.128
+        server-addr: nacos-service
     gateway:
       routes:
         - id: item-service

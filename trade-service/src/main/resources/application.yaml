@@ -4,16 +4,17 @@ spring:
   application:
     name: trade-service
   profiles:
-    active: dev
+    active: prod
   datasource:
     url: jdbc:mysql://${hm.db.host}:3306/hm-trade?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: ${hm.db.pw}
+    username: ${hm.db.username}
+    password: ${hm.db.password}
   cloud:
     nacos:
       discovery:
-        server-addr: 10.13.0.128
+        server-addr: ${hm.nacos.server-addr}
+#        server-addr: 10.13.0.128
 feign:
   okhttp:
     enabled: true
